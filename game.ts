@@ -13,7 +13,7 @@ function game() {
   // If valuesSet is empty or the number of them is even - exiting program
   if (valuesSet.size <= 1 || valuesSet.size % 2 === 0) {
     console.log(
-      'Please enter odd number of turns as arguments. \nThe number of arguments should be equal or more than 3. Values should be uniq.'
+      'Please enter odd number of turns as arguments. \nThe number of arguments should be equal or more than 3. Values should be unique.'
     );
     process.exit();
   }
