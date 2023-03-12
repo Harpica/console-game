@@ -39,26 +39,24 @@ export class ConsoleInterface {
     } else if (input === 'q') {
       this.ac.abort();
       process.exit();
-    } else if (!isNaN(inputIndex)) {
-      if (inputIndex >= 0 && inputIndex < values.length) {
-        console.log('Your move: ' + values[inputIndex]);
-        console.log("Computer's move: " + values[computerIndex]);
-        switch (checkWinner(inputIndex, computerIndex)) {
-          case 'win':
-            console.log('You win!');
-            break;
-          case 'lose':
-            console.log('You lose :C');
-            break;
-          case 'draw':
-            console.log('Dead heat!');
-            break;
-          default:
-            break;
-        }
-        console.log('Secret key: ' + key);
-        process.exit();
+    } else if (inputIndex >= 0 && inputIndex < values.length) {
+      console.log('Your move: ' + values[inputIndex]);
+      console.log("Computer's move: " + values[computerIndex]);
+      switch (checkWinner(inputIndex, computerIndex)) {
+        case 'win':
+          console.log('You win!');
+          break;
+        case 'lose':
+          console.log('You lose :C');
+          break;
+        case 'draw':
+          console.log('Dead heat!');
+          break;
+        default:
+          break;
       }
+      console.log('Secret key: ' + key);
+      process.exit();
     } else {
       console.log('Please enter valid value from the table above');
     }
